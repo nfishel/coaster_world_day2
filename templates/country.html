@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>What country would you like to choose?</h2>
+<form action="/country" method="post">
+  <select name="country" class="form-select mb-4" aria-label="Default select example">
+  {% for row in countries_list %}
+    <option value="{{ row.country }}">{{ row.country }}</option>
+  {% endfor %}
+  </select>
+  <input class="btn btn-primary" type="submit" value="Select Country">
+</form>
+
+{% endblock %}

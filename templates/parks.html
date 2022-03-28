@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Select a park to see it's coasters</h2>
+<form action="/coasters" method="post">
+  <select name="park" class="form-select mb-4">
+    {% for park in parks_list %}
+    <option value="{{park.park}}">{{park.park}}</option>
+    {% endfor %}
+  </select>
+  <input type="submit" class="btn btn-primary" value="Show Coasters">
+</form>
+
+{% endblock %}
